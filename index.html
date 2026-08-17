@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tara Thai Fusion Massage | Mobile Massage | Puget Sound, WA</title>
+  <meta name="description" content="Luxury in-home massage therapy in the Puget Sound area. Thai Fusion, Swedish, and Deep Tissue massages delivered to your home.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brown-dark: #4a4638;
+      --brown-mid: #6b6554;
+      --brown-light: #8f8770;
+      --gold: #d4af37;
+      --gold-light: #e8c96a;
+      --cream: #f5f2e9;
+      --cream-dark: #e5dfd0;
+      --text-dark: #2e2c24;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-dark);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ========== NAV ========== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(245, 242, 233, 0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(74, 70, 56, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--brown-dark);
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.75rem;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      border: none;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: var(--brown-dark);
+      color: var(--cream);
+      box-shadow: 0 2px 8px rgba(74, 70, 56, 0.15);
+    }
+
+    .btn-primary:hover {
+      background: var(--brown-mid);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(74, 70, 56, 0.25);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 6px rgba(74, 70, 56, 0.2);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--brown-dark);
+      box-shadow: 0 2px 8px rgba(212, 175, 55, 0.25);
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(212, 175, 55, 0.35);
+    }
+
+    .btn-gold:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 6px rgba(212, 175, 55, 0.25);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--cream);
+      color: var(--cream);
+    }
+
+    .btn-outline:hover {
+      background: var(--cream);
+      color: var(--brown-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-outline:active {
+      transform: translateY(0);
+    }
+
+    .btn-outline-dark {
+      background: transparent;
+      border: 1.5px solid var(--brown-dark);
+      color: var(--brown-dark);
+    }
+
+    .btn-outline-dark:hover {
+      background: var(--brown-dark);
+      color: var(--cream);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(74, 70, 56, 0.2);
+    }
+
+    .btn-outline-dark:active {
+      transform: translateY(0);
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      min-height: 100vh;
+      background: var(--brown-dark);
+      display: flex;
+      align-items: center;
+      padding: 6rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-content {
+      color: var(--cream);
+      text-align: center;
+    }
+
+    .logo-large {
+      width: 280px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--gold-light);
+      margin-bottom: 2rem;
+      line-height: 1.4;
+    }
+
+    .hero-image {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+    }
+
+    /* ========== SECTION COMMON ========== */
+    .section {
+      padding: 5rem 2rem;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 2.6rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      color: var(--brown-dark);
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      color: var(--text-dark);
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+
+    /* ========== ABOUT ========== */
+    .about {
+      background: var(--cream);
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-text h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1.25rem;
+      color: var(--brown-dark);
+    }
+
+    .about-text p {
+      margin-bottom: 1.25rem;
+      color: var(--text-dark);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .about-image {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(74, 70, 56, 0.15);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+    }
+
+    /* ========== SERVICES ========== */
+    .services {
+      background: linear-gradient(180deg, #f5ede0 0%, var(--cream) 100%);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 1.75rem;
+      box-shadow: 0 8px 25px rgba(74, 70, 56, 0.08);
+      transition: transform 0.25s, box-shadow 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 35px rgba(74, 70, 56, 0.12);
+    }
+
+    .service-card h3 {
+      font-size: 1.35rem;
+      color: var(--brown-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .service-card .duration {
+      font-size: 0.9rem;
+      color: var(--brown-mid);
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+
+    .service-card p {
+      font-size: 1rem;
+      color: var(--text-dark);
+      flex-grow: 1;
+      margin-bottom: 1.25rem;
+      line-height: 1.65;
+    }
+
+    .service-card .price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .service-card .btn {
+      width: 100%;
+      text-align: center;
+    }
+
+    /* ========== CONTACT / FOOTER ========== */
+    .contact {
+      background: var(--brown-dark);
+      color: var(--cream);
+      text-align: center;
+      padding: 5rem 2rem 3rem;
+    }
+
+    .contact .section-title {
+      color: var(--gold-light);
+    }
+
+    .quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-style: italic;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: var(--cream-dark);
+      line-height: 1.5;
+    }
+
+    .contact-info {
+      margin-bottom: 2.5rem;
+      font-size: 1.05rem;
+    }
+
+    .footer {
+      background: #3a372c;
+      color: var(--cream-dark);
+      text-align: center;
+      padding: 1.5rem 2rem;
+      font-size: 0.9rem;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-image {
+        order: -1;
+        max-width: 480px;
+        margin: 0 auto;
+      }
+      .hero-image img {
+        height: 320px;
+      }
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-inner {
+        padding: 0.85rem 1.25rem;
+      }
+      .nav-links {
+        display: none; /* simple mobile: can expand later */
+      }
+      .hero {
+        padding: 5rem 1.25rem 3rem;
+      }
+      .logo-large {
+        width: 200px;
+      }
+      .hero-tagline {
+        font-size: 1.3rem;
+      }
+      .section {
+        padding: 3.5rem 1.25rem;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+
+    /* Temporary mobile menu button placeholder */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--brown-dark);
+      cursor: pointer;
+    }
+    @media (max-width: 600px) {
+      .mobile-menu-btn {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" style="display: flex; align-items: center;">
+        <img src="logo-icon.png" alt="Tara Thai Fusion Massage" style="height: 52px; width: auto;">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="btn btn-primary" onclick="openBooking()">Book Online</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <img src="logo.png" alt="Tara Thai Fusion Massage Therapy" class="logo-large" style="max-width: 320px; margin: 0 auto 1.5rem; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));">
+        <p class="hero-tagline">Release Tension, Relax the Body,<br>and Heal the Mind</p>
+        <a href="#services" class="btn btn-outline">Discover Our Services</a>
+      </div>
+      <div class="hero-image">
+        <img src="hero-spa.png" alt="Spa oils, lotus flower, stones and towel on wooden table">
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="section-inner">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>Meet Tara Thai Fusion Massage</h2>
+          <p>At Tara Thai Fusion Massage, we specialize in providing mobile massage therapy services that help our clients release tension, relax their body, and heal their mind.</p>
+          <p>Our team is dedicated to providing an exceptional experience for every client, customizing our approach to meet your unique needs and preferences.</p>
+          <p>Tara Thai Fusion Massage is owned and operated by Victoria Ames, LMT. Victoria specializes in Swedish, Deep Tissue, and Thai Fusion massages. She believes that massage therapy is an essential part of self-care and can help you achieve optimal health and wellness.</p>
+          <button class="btn btn-primary" onclick="openBooking()" style="margin-top: 0.5rem;">Book Your Session</button>
+        </div>
+        <div class="about-image">
+          <img src="massage-back.jpg" alt="Therapeutic back massage">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section services" id="services">
+    <div class="section-inner">
+      <h2 class="section-title">Relaxation and Therapeutic Services</h2>
+      <p class="section-subtitle">Luxury in-home massage therapy tailored to your needs. Traveling fees are calculated from Bonney Lake, WA. <a href="fees.html" style="color: var(--brown-dark); font-weight: 600; text-decoration: underline;">See fee schedule →</a></p>
+
+      <div class="services-grid">
+
+        <!-- Thai Fusion -->
+        <div class="service-card">
+          <h3>Thai Fusion Massage</h3>
+          <p>Our Signature Massage. A mixture of Eastern and Western techniques that creates a unique and holistic experience.</p>
+          <div class="price">From $130</div>
+          <div style="display: flex; gap: 0.75rem; margin-top: 0.5rem;">
+            <a href="thai-fusion.html" class="btn btn-outline-dark" style="flex: 1; text-align: center;">Read More</a>
+            <button class="btn btn-primary" style="flex: 1;" onclick="openBooking()">Book Now</button>
+          </div>
+        </div>
+
+        <!-- Swedish -->
+        <div class="service-card">
+          <h3>Swedish Massage</h3>
+          <p>Experience the ultimate relaxation with gentle, flowing strokes that release tension, reduce stress, and improve circulation.</p>
+          <div class="price">From $130</div>
+          <div style="display: flex; gap: 0.75rem; margin-top: 0.5rem;">
+            <a href="swedish.html" class="btn btn-outline-dark" style="flex: 1; text-align: center;">Read More</a>
+            <button class="btn btn-primary" style="flex: 1;" onclick="openBooking()">Book Now</button>
+          </div>
+        </div>
+
+        <!-- Deep Tissue -->
+        <div class="service-card">
+          <h3>Deep Tissue Massage</h3>
+          <p>A focused approach using firm pressure and precise techniques to release muscle tension, alleviate chronic pain, and enhance flexibility.</p>
+          <div class="price">From $130</div>
+          <div style="display: flex; gap: 0.75rem; margin-top: 0.5rem;">
+            <a href="deep-tissue.html" class="btn btn-outline-dark" style="flex: 1; text-align: center;">Read More</a>
+            <button class="btn btn-primary" style="flex: 1;" onclick="openBooking()">Book Now</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="section-inner">
+      <h2 class="section-title">Contact</h2>
+      <p class="quote">“Massage is not a luxury, but a pathway to a healthier, happier life.”</p>
+      <div class="contact-info">
+        <p><strong>Tara Thai Fusion Massage</strong></p>
+        <p>Mobile massage serving the Puget Sound area</p>
+        <p>Based in Bonney Lake, WA</p>
+      </div>
+      <button class="btn btn-gold" onclick="openBooking()">Book Online</button>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2026 Tara Thai Fusion Massage. All rights reserved.</p>
+  </footer>
+
+  <!-- ===================== SUPERS AAS WIDGET ===================== -->
+  <script src="https://cdn.supersaas.net/widget.js"></script>
+  <script class="supersaas-widget">
+    var supersaas_845849 = new SuperSaaS(
+      "636841:TaraThaiFusionMassage",
+      "845849:MobileMassage",
+      {
+        "modal_width": "500px",
+        "cal_pos": "left",
+        "slot_view": "btn",
+        "legend": "show"
+      }
+    );
+  </script>
+
+  <script>
+    function openBooking() {
+      if (typeof supersaas_845849 !== 'undefined' && supersaas_845849.show) {
+        supersaas_845849.show();
+      } else {
+        console.error('SuperSaaS widget not loaded yet. Please try again in a moment.');
+      }
+    }
+  </script>
+
+</body>
+</html>

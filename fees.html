@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fees & Travel | Tara Thai Fusion Massage</title>
+  <meta name="description" content="Travel fees and evening surcharge schedule for Tara Thai Fusion Massage mobile service.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brown-dark: #4a4638;
+      --brown-mid: #6b6554;
+      --brown-light: #8f8770;
+      --gold: #d4af37;
+      --gold-light: #e8c96a;
+      --cream: #f5f2e9;
+      --cream-dark: #e5dfd0;
+      --text-dark: #2e2c24;
+      --text-body: #3f3c32;
+      --white: #ffffff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-body);
+      background: var(--cream);
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+    h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(245, 242, 233, 0.97); backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(74, 70, 56, 0.12);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 1rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.95rem; font-weight: 600; color: var(--brown-dark);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .btn {
+      display: inline-block; padding: 0.8rem 1.8rem; border-radius: 4px;
+      font-weight: 600; font-size: 0.9rem; letter-spacing: 0.04em;
+      cursor: pointer; transition: all 0.25s ease; border: none; font-family: inherit;
+    }
+    .btn-primary {
+      background: var(--brown-dark); color: #f8f1e3;
+      box-shadow: 0 2px 8px rgba(74, 70, 56, 0.15);
+    }
+    .btn-primary:hover {
+      background: var(--brown-mid); transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(74, 70, 56, 0.25);
+    }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-gold {
+      background: var(--gold); color: var(--brown-dark);
+      box-shadow: 0 2px 8px rgba(212, 175, 55, 0.25);
+    }
+    .btn-gold:hover {
+      background: var(--gold-light); transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(212, 175, 55, 0.35);
+    }
+    .btn-gold:active { transform: translateY(0); }
+
+    .page-hero {
+      background: var(--brown-dark); color: #f8f1e3;
+      padding: 7rem 2rem 3.5rem; text-align: center;
+    }
+    .page-hero h1 {
+      font-size: 2.9rem; margin-bottom: 0.85rem;
+      color: var(--gold-light); letter-spacing: 0.01em;
+    }
+    .page-hero p {
+      font-size: 1.2rem; max-width: 620px; margin: 0 auto;
+      color: #f0e6d4; font-weight: 400;
+    }
+
+    .content { max-width: 780px; margin: 0 auto; padding: 3.5rem 2rem 4rem; }
+
+    .section-block { margin-bottom: 3rem; }
+    .section-block h2 {
+      font-size: 1.95rem; color: var(--brown-dark); margin-bottom: 1.25rem;
+      border-bottom: 2px solid var(--gold); padding-bottom: 0.5rem; display: inline-block;
+      letter-spacing: 0.01em;
+    }
+    .section-block p {
+      color: var(--text-body); margin-bottom: 1.25rem;
+      font-size: 1.08rem; line-height: 1.75;
+    }
+
+    .fee-table {
+      width: 100%; border-collapse: collapse; margin: 1.25rem 0 1.5rem;
+      background: var(--white); border-radius: 10px; overflow: hidden;
+      border: 1px solid rgba(74, 70, 56, 0.1);
+      box-shadow: 0 4px 18px rgba(74, 70, 56, 0.07);
+    }
+    .fee-table th, .fee-table td {
+      padding: 1.1rem 1.35rem; text-align: left;
+    }
+    .fee-table th {
+      background: var(--brown-dark); color: #f8f1e3;
+      font-weight: 600; font-size: 0.95rem; letter-spacing: 0.03em;
+    }
+    .fee-table tr:nth-child(even) { background: #f9f4ec; }
+    .fee-table td {
+      color: var(--text-body); border-top: 1px solid rgba(74,70,56,0.08);
+      font-size: 1.05rem;
+    }
+    .fee-table .amount {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.4rem;
+      font-weight: 600; color: var(--gold);
+    }
+
+    .note {
+      background: #efece2;
+      border-left: 5px solid var(--gold);
+      padding: 1.15rem 1.4rem;
+      margin: 1.5rem 0;
+      font-size: 1rem;
+      color: var(--text-body);
+      line-height: 1.65;
+    }
+
+    .cta { text-align: center; margin: 2.5rem 0 1rem; }
+    .back-link {
+      display: inline-block; margin-top: 1.6rem;
+      color: var(--brown-mid); font-size: 1rem; font-weight: 500;
+    }
+    .back-link:hover { color: var(--gold); }
+
+    .footer {
+      background: #3a372c; color: var(--cream-dark);
+      text-align: center; padding: 1.5rem 2rem; font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .page-hero h1 { font-size: 2.15rem; }
+      .nav-links { display: none; }
+      .fee-table th, .fee-table td { padding: 0.9rem 1rem; font-size: 0.98rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html"><img src="logo-icon.png" alt="Tara Thai Fusion" style="height: 52px;"></a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <button class="btn btn-primary" onclick="openBooking()">Book Online</button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <h1>Fees & Travel</h1>
+    <p>Transparent pricing for travel and evening appointments</p>
+  </section>
+
+  <div class="content">
+
+    <div class="section-block">
+      <h2>Travel Fees</h2>
+      <p>Travel fees are calculated from Bonney Lake, WA. The fee is based on the one-way distance to your location.</p>
+
+      <table class="fee-table">
+        <thead>
+          <tr>
+            <th>Distance from Bonney Lake</th>
+            <th>Travel Fee</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0 – 15 miles</td>
+            <td class="amount">Free</td>
+          </tr>
+          <tr>
+            <td>15 – 30 miles</td>
+            <td class="amount">$15</td>
+          </tr>
+          <tr>
+            <td>30 – 45 miles</td>
+            <td class="amount">$25</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note">
+        Distances beyond 45 miles may be available by special arrangement. Please contact us to discuss.
+      </div>
+    </div>
+
+    <div class="section-block">
+      <h2>Evening Surcharge</h2>
+      <p>Appointments that begin in the evening carry a small surcharge to account for later hours.</p>
+
+      <table class="fee-table">
+        <thead>
+          <tr>
+            <th>Appointment Start Time</th>
+            <th>Surcharge</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>6:00 PM – 7:00 PM</td>
+            <td class="amount">+$15</td>
+          </tr>
+          <tr>
+            <td>7:00 PM – 8:00 PM</td>
+            <td class="amount">+$20</td>
+          </tr>
+          <tr>
+            <td>8:00 PM – 9:00 PM</td>
+            <td class="amount">+$30</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note">
+        The surcharge is based on the scheduled start time of the appointment.
+      </div>
+    </div>
+
+    <div class="cta">
+      <button class="btn btn-gold" onclick="openBooking()" style="font-size: 1rem; padding: 0.9rem 2.25rem;">Book Online</button>
+      <br>
+      <a href="index.html#services" class="back-link">← Back to services</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2026 Tara Thai Fusion Massage. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.supersaas.net/widget.js"></script>
+  <script class="supersaas-widget">
+    var supersaas_845849 = new SuperSaaS(
+      "636841:TaraThaiFusionMassage",
+      "845849:MobileMassage",
+      { "modal_width": "500px", "cal_pos": "left", "slot_view": "btn", "legend": "show" }
+    );
+  </script>
+  <script>
+    function openBooking() {
+      if (typeof supersaas_845849 !== 'undefined' && supersaas_845849.show) {
+        supersaas_845849.show();
+      }
+    }
+  </script>
+</body>
+</html>

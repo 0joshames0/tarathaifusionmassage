@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thai Fusion Massage | Tara Thai Fusion Massage</title>
+  <meta name="description" content="Our Signature Thai Fusion Massage – a unique blend of Eastern and Western techniques. Available in 60, 90, and 120 minute sessions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brown-dark: #4a4638;
+      --brown-mid: #6b6554;
+      --brown-light: #8f8770;
+      --gold: #d4af37;
+      --gold-light: #e8c96a;
+      --cream: #f5f2e9;
+      --cream-dark: #e5dfd0;
+      --text-dark: #2e2c24;
+      --text-body: #3f3c32;
+      --white: #ffffff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-body);
+      background: var(--cream);
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+    h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(245, 242, 233, 0.97); backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(74, 70, 56, 0.12);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 1rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.95rem; font-weight: 600; color: var(--brown-dark);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .btn {
+      display: inline-block; padding: 0.8rem 1.8rem; border-radius: 4px;
+      font-weight: 600; font-size: 0.9rem; letter-spacing: 0.04em;
+      cursor: pointer; transition: all 0.25s ease; border: none; font-family: inherit;
+    }
+    .btn-primary {
+      background: var(--brown-dark); color: #f8f1e3;
+      box-shadow: 0 2px 8px rgba(74, 70, 56, 0.15);
+    }
+    .btn-primary:hover {
+      background: var(--brown-mid); transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(74, 70, 56, 0.25);
+    }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-gold {
+      background: var(--gold); color: var(--brown-dark);
+      box-shadow: 0 2px 8px rgba(212, 175, 55, 0.25);
+    }
+    .btn-gold:hover {
+      background: var(--gold-light); transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(212, 175, 55, 0.35);
+    }
+    .btn-gold:active { transform: translateY(0); }
+
+    .page-hero {
+      background: var(--brown-dark); color: #f8f1e3;
+      padding: 7rem 2rem 4rem; text-align: center;
+    }
+    .page-hero h1 {
+      font-size: 2.9rem; margin-bottom: 0.85rem;
+      color: var(--gold-light); letter-spacing: 0.01em;
+    }
+    .page-hero p {
+      font-size: 1.2rem; max-width: 620px; margin: 0 auto;
+      color: #f0e6d4; font-weight: 400;
+    }
+
+    .content { max-width: 800px; margin: 0 auto; padding: 4rem 2rem; }
+    .content h2 {
+      font-size: 1.95rem; color: var(--brown-dark);
+      margin: 2.75rem 0 1.15rem; letter-spacing: 0.01em;
+    }
+    .content p {
+      margin-bottom: 1.35rem;
+      color: var(--text-body);
+      font-size: 1.08rem;
+      line-height: 1.75;
+    }
+
+    .options { display: grid; gap: 1.15rem; margin: 2rem 0 2.75rem; }
+    .option-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 1.6rem 1.85rem;
+      border: 1px solid rgba(74, 70, 56, 0.1);
+      box-shadow: 0 4px 18px rgba(74, 70, 56, 0.07);
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .option-card h3 {
+      font-size: 1.3rem; color: var(--brown-dark); margin-bottom: 0.2rem;
+    }
+    .option-card .duration {
+      font-size: 0.95rem; color: var(--brown-mid); font-weight: 500;
+    }
+    .option-card .price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.65rem; font-weight: 600; color: var(--gold);
+    }
+
+    .note {
+      background: #efece2;
+      border-left: 5px solid var(--gold);
+      padding: 1.15rem 1.4rem;
+      margin: 2rem 0;
+      font-size: 1rem;
+      color: var(--text-body);
+      line-height: 1.65;
+    }
+    .note a {
+      color: var(--brown-dark);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .note a:hover { color: var(--gold); }
+
+    .cta { text-align: center; margin: 3rem 0 1rem; }
+    .back-link {
+      display: inline-block; margin-top: 1.6rem;
+      color: var(--brown-mid); font-size: 1rem; font-weight: 500;
+    }
+    .back-link:hover { color: var(--gold); }
+
+    .footer {
+      background: #3a372c; color: var(--cream-dark);
+      text-align: center; padding: 1.5rem 2rem; font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .page-hero h1 { font-size: 2.15rem; }
+      .nav-links { display: none; }
+      .option-card { flex-direction: column; align-items: flex-start; }
+      .content p { font-size: 1.05rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html"><img src="logo-icon.png" alt="Tara Thai Fusion" style="height: 52px;"></a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <button class="btn btn-primary" onclick="openBooking()">Book Online</button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <h1>Thai Fusion Massage</h1>
+    <p>Our Signature Massage — a unique blend of Eastern and Western techniques</p>
+  </section>
+
+  <div class="content">
+    <p>Introducing Thai Fusion Massage – where the best of Eastern and Western massage techniques merge to create a unique and holistic experience. This therapy seamlessly blends the ancient wisdom of Thai bodywork with Western relaxation and muscle relief methods, offering a balanced, rejuvenating, and truly transformative massage session.</p>
+
+    <h2>Session Options</h2>
+    <div class="options">
+      <div class="option-card">
+        <div>
+          <h3>60 Minute Session</h3>
+          <div class="duration">1 hour</div>
+        </div>
+        <div class="price">From $130</div>
+      </div>
+      <div class="option-card">
+        <div>
+          <h3>90 Minute Session</h3>
+          <div class="duration">1 hour 30 minutes</div>
+        </div>
+        <div class="price">From $180</div>
+      </div>
+      <div class="option-card">
+        <div>
+          <h3>120 Minute Session</h3>
+          <div class="duration">2 hours</div>
+        </div>
+        <div class="price">From $230</div>
+      </div>
+    </div>
+
+    <div class="note">
+      Travelling fees are calculated from Bonney Lake, WA. 
+      <a href="fees.html" style="color: var(--brown-dark); font-weight: 600; text-decoration: underline;">View full travel &amp; evening fee schedule →</a>
+    </div>
+
+    <div class="cta">
+      <button class="btn btn-gold" onclick="openBooking()" style="font-size: 1rem; padding: 0.9rem 2.25rem;">Book This Service</button>
+      <br>
+      <a href="index.html#services" class="back-link">← Back to all services</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2026 Tara Thai Fusion Massage. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.supersaas.net/widget.js"></script>
+  <script class="supersaas-widget">
+    var supersaas_845849 = new SuperSaaS(
+      "636841:TaraThaiFusionMassage",
+      "845849:MobileMassage",
+      { "modal_width": "500px", "cal_pos": "left", "slot_view": "btn", "legend": "show" }
+    );
+  </script>
+  <script>
+    function openBooking() {
+      if (typeof supersaas_845849 !== 'undefined' && supersaas_845849.show) {
+        supersaas_845849.show();
+      }
+    }
+  </script>
+</body>
+</html>
