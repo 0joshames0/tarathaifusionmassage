@@ -354,27 +354,70 @@
     .contact {
       background: var(--brown-dark);
       color: var(--cream);
-      text-align: center;
       padding: 5rem 2rem 3rem;
     }
 
     .contact .section-title {
       color: var(--gold-light);
+      text-align: center;
     }
 
     .quote {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
+      font-size: 1.45rem;
       font-style: italic;
-      max-width: 700px;
-      margin: 0 auto 2rem;
+      max-width: 520px;
+      margin: 0 0 1.75rem;
       color: var(--cream-dark);
       line-height: 1.5;
     }
 
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .contact-left {
+      text-align: left;
+    }
+
     .contact-info {
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
       font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .contact-right {
+      text-align: center;
+    }
+
+    .owner-photo {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      object-position: center 15%;
+      border-radius: 50%;
+      border: 4px solid var(--gold);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+      margin: 0 auto 1.25rem;
+      display: block;
+    }
+
+    .owner-details {
+      font-size: 1rem;
+      line-height: 1.65;
+      color: var(--cream);
+    }
+
+    .owner-details strong {
+      display: block;
+      font-size: 1.15rem;
+      color: var(--gold-light);
+      margin-bottom: 0.35rem;
     }
 
     .footer {
@@ -401,6 +444,17 @@
       }
       .about-content {
         grid-template-columns: 1fr;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .contact-left {
+        text-align: center;
+      }
+      .quote {
+        margin-left: auto;
+        margin-right: auto;
       }
       .nav-links {
         gap: 1.5rem;
@@ -473,7 +527,7 @@
         <a href="#services" class="btn btn-outline">Discover Our Services</a>
       </div>
       <div class="hero-image">
-        <img src="hero-spa.png" alt="Spa oils, lotus flower, stones and towel on wooden table">
+        <img src="hero-spa.jpg" alt="Luxury massage table with candles, oils and spa essentials">
       </div>
     </div>
   </section>
@@ -545,13 +599,25 @@
   <section class="contact" id="contact">
     <div class="section-inner">
       <h2 class="section-title">Contact</h2>
-      <p class="quote">“Massage is not a luxury, but a pathway to a healthier, happier life.”</p>
-      <div class="contact-info">
-        <p><strong>Tara Thai Fusion Massage</strong></p>
-        <p>Mobile massage serving the Puget Sound area</p>
-        <p>Based in Bonney Lake, WA</p>
+      <div class="contact-grid">
+        <div class="contact-left">
+          <p class="quote">“Massage is not a luxury, but a pathway to a healthier, happier life.”</p>
+          <div class="contact-info">
+            <p><strong>Tara Thai Fusion Massage</strong></p>
+            <p>Mobile massage serving the Puget Sound area</p>
+            <p>Based in Bonney Lake, WA</p>
+          </div>
+          <button class="btn btn-gold" onclick="openBooking()">Book Online</button>
+        </div>
+        <div class="contact-right">
+          <img src="victoria-ames.jpg" alt="Victoria Ames, Owner and Licensed Massage Therapist" class="owner-photo">
+          <div class="owner-details">
+            <strong>Victoria Ames — Owner and LMT</strong>
+            WA LIC #MA61445980<br>
+            206-458-9932 — Text Preferred
+          </div>
+        </div>
       </div>
-      <button class="btn btn-gold" onclick="openBooking()">Book Online</button>
     </div>
   </section>
 
