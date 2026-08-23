@@ -98,6 +98,68 @@
       line-height: 1.75;
     }
 
+    .carousel {
+      position: relative;
+      margin: 0.5rem 0 1.75rem;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 340px;
+      background: #2e2c24;
+      box-shadow: 0 10px 30px rgba(74, 70, 56, 0.12);
+    }
+    .carousel-track {
+      display: flex;
+      height: 100%;
+      transition: transform 0.5s ease;
+    }
+    .carousel-track img {
+      min-width: 100%;
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(46, 44, 36, 0.55);
+      color: #f5f2e9;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.25rem;
+      line-height: 1;
+      z-index: 2;
+    }
+    .carousel-btn:hover { background: rgba(212, 175, 55, 0.9); color: #2e2c24; }
+    .carousel-btn.prev { left: 10px; }
+    .carousel-btn.next { right: 10px; }
+    .carousel-dots {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 7px;
+      z-index: 2;
+    }
+    .carousel-dots button {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255,255,255,0.45);
+      cursor: pointer;
+      padding: 0;
+    }
+    .carousel-dots button.active { background: var(--gold); }
+    @media (max-width: 600px) {
+      .carousel, .carousel-track img { height: 220px; }
+    }
+
     .options { display: grid; gap: 1.15rem; margin: 2rem 0 2.75rem; }
     .option-card {
       background: var(--white);
@@ -178,6 +240,22 @@
   <div class="content">
     <p>Introducing Thai Fusion Massage – where the best of Eastern and Western massage techniques merge to create a unique and holistic experience. This therapy seamlessly blends the ancient wisdom of Thai bodywork with Western relaxation and muscle relief methods, offering a balanced, rejuvenating, and truly transformative massage session.</p>
 
+    <div class="carousel" data-carousel>
+      <div class="carousel-track">
+        <img src="thai-1.jpg" alt="Thai Fusion seated stretch massage">
+        <img src="thai-2.png" alt="Thai Fusion floor stretching session">
+        <img src="thai-3.jpg" alt="Thai Fusion leg stretch technique">
+        <img src="thai-4.jpg" alt="Thai Fusion side stretch technique">
+        <img src="thai-5.jpg" alt="Thai Fusion hip stretch technique">
+        <img src="thai-6.jpg" alt="Thai Fusion deep back work">
+        <img src="thai-7.jpg" alt="Relaxing Thai Fusion table massage">
+        <img src="thai-8.jpg" alt="Thai temple landscape at sunset">
+        <img src="thai-9.jpg" alt="Sukhothai historical park with lotus pond">
+      </div>
+      <button class="carousel-btn prev" type="button" aria-label="Previous photo">‹</button>
+      <button class="carousel-btn next" type="button" aria-label="Next photo">›</button>
+      <div class="carousel-dots"></div>
+    </div>
 
     <h2>Session Options</h2>
     <div class="options">
@@ -186,21 +264,21 @@
           <h3>60 Minute Session</h3>
           <div class="duration">1 hour</div>
         </div>
-        <div class="price">From $140</div>
+        <div class="price">$140</div>
       </div>
       <div class="option-card">
         <div>
           <h3>90 Minute Session</h3>
           <div class="duration">1 hour 30 minutes</div>
         </div>
-        <div class="price">From $190</div>
+        <div class="price">From $180</div>
       </div>
       <div class="option-card">
         <div>
           <h3>120 Minute Session</h3>
           <div class="duration">2 hours</div>
         </div>
-        <div class="price">From $240</div>
+        <div class="price">From $230</div>
       </div>
     </div>
 
@@ -234,6 +312,29 @@
         supersaas_846095.show();
       }
     }
+
+    document.querySelectorAll('[data-carousel]').forEach(function (root) {
+      var track = root.querySelector('.carousel-track');
+      var slides = track.querySelectorAll('img');
+      var dotsWrap = root.querySelector('.carousel-dots');
+      var i = 0;
+      slides.forEach(function (_, idx) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        if (idx === 0) dot.classList.add('active');
+        dot.addEventListener('click', function () { go(idx); });
+        dotsWrap.appendChild(dot);
+      });
+      var dots = dotsWrap.querySelectorAll('button');
+      function go(n) {
+        i = (n + slides.length) % slides.length;
+        track.style.transform = 'translateX(' + (-i * 100) + '%)';
+        dots.forEach(function (d, di) { d.classList.toggle('active', di === i); });
+      }
+      root.querySelector('.prev').addEventListener('click', function () { go(i - 1); });
+      root.querySelector('.next').addEventListener('click', function () { go(i + 1); });
+      setInterval(function () { go(i + 1); }, 4500);
+    });
   </script>
 </body>
 </html>
