@@ -426,6 +426,60 @@
     }
     .carousel-dots button.active { background: var(--gold); }
 
+    /* ========== SERVICE AREA ========== */
+    .service-area {
+      background: var(--brown-dark);
+      color: var(--cream);
+    }
+
+    .service-area .section-title {
+      color: var(--gold-light);
+    }
+
+    .service-area .section-subtitle {
+      color: var(--cream-dark);
+    }
+
+    .area-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      max-width: 820px;
+      margin: 2rem auto 0;
+    }
+
+    .area-pill {
+      background: rgba(245, 242, 233, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      color: var(--cream);
+      padding: 0.55rem 1.25rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .area-pill:hover {
+      background: rgba(212, 175, 55, 0.15);
+      border-color: var(--gold);
+    }
+
+    .area-note {
+      text-align: center;
+      max-width: 620px;
+      margin: 2rem auto 0;
+      color: var(--cream-dark);
+      font-size: 0.95rem;
+    }
+
+    .area-note a {
+      color: var(--gold-light);
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
     /* ========== CONTACT / FOOTER ========== */
     .contact {
       background: var(--brown-dark);
@@ -591,6 +645,7 @@
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
+        <li><a href="#service-area">Service Area</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <button class="btn btn-primary" onclick="openBooking()">Book Online</button>
@@ -633,7 +688,7 @@
   <section class="section services" id="services">
     <div class="section-inner">
       <h2 class="section-title">Relaxation and Therapeutic Services</h2>
-      <p class="section-subtitle">Luxury in-home massage therapy tailored to your needs. Traveling fees are calculated from Bonney Lake, WA. <a href="fees.html" style="color: var(--brown-dark); font-weight: 600; text-decoration: underline;">See fee schedule →</a></p>
+      <p class="section-subtitle">Luxury in-home massage therapy tailored to your needs.</p>
 
       <div class="services-atmosphere">
         <img src="spa-still.jpg" alt="Spa atmosphere with candles, hot stones and flowers">
@@ -715,6 +770,38 @@
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREA -->
+  <section class="section service-area" id="service-area">
+    <div class="section-inner">
+      <h2 class="section-title">Proudly Serving the Greater Puget Sound Area</h2>
+      <p class="section-subtitle" style="color: var(--cream-dark);">Luxury in-home massage brought directly to your doorstep throughout the Puget Sound and beyond, including:</p>
+
+      <div class="area-grid">
+        <span class="area-pill">Bonney Lake</span>
+        <span class="area-pill">Sumner</span>
+        <span class="area-pill">Puyallup</span>
+        <span class="area-pill">Auburn</span>
+        <span class="area-pill">Federal Way</span>
+        <span class="area-pill">Kent</span>
+        <span class="area-pill">Edgewood</span>
+        <span class="area-pill">Tacoma</span>
+        <span class="area-pill">Lakewood</span>
+        <span class="area-pill">Maple Valley</span>
+        <span class="area-pill">Enumclaw</span>
+        <span class="area-pill">Renton</span>
+        <span class="area-pill">Bellevue</span>
+        <span class="area-pill">Issaquah</span>
+        <span class="area-pill">Kirkland</span>
+        <span class="area-pill">Seattle</span>
+        <span class="area-pill">Lacey</span>
+        <span class="area-pill">Olympia</span>
+      </div>
+
+      <p class="area-note">Don't see your city? Reach out anyway — I may still be able to accommodate you.</p>
+      <p class="area-note" style="margin-top: 0.75rem;">Travel fee varies by distance from Bonney Lake — $0 to $25. Evening surcharge applies after 6 PM. <a href="fees.html">See full fee schedule →</a></p>
     </div>
   </section>
 
